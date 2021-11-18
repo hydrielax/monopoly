@@ -50,4 +50,12 @@ public class Constructible extends Achetable {
     public void setPrixHotel(double newPrix){
         prixHotel = newPrix;
     }
+
+    public void faillite(Joueur j){
+        if(this.proprietaire == j){
+            super.faillite(j);
+            this.nbMaison = 0;
+            this.nbHotel = 0;
+        }
+    }
 }
