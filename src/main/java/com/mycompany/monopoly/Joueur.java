@@ -10,7 +10,7 @@ public class Joueur{
 
     public Joueur(String nom, Plateau plateau){
         this.nom = nom;
-        this.plateau = new Plateau(plateau);
+        this.plateau = plateau;
         this.fortune = 100000;
         this.position = 0;
     }
@@ -36,7 +36,7 @@ public class Joueur{
         this.nom=nom;
     }
     public void setPosition(Case pos){
-        this.position=pos;
+        this.position = pos;
     }
     public void setFortune(int fort){
         this.fortune = fort;
@@ -67,7 +67,7 @@ public class Joueur{
     public void tourDeJeu() throws NoMoreMoneyException{
         // lancer le dé
         int de = lanceLeDe();
-        position = plateau.avancer(this.position, de);
+        position = plateau.avance(this.position, de);
         Case c = plateau.getCases().get(position);
         c.utiliser(this,de);
         
