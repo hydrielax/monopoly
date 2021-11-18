@@ -1,3 +1,5 @@
+package com.mycompany.monopoly;
+
 public class Joueur{
     private String nom;
     private double fortune;
