@@ -5,8 +5,6 @@
  */
 package com.mycompany.monopoly;
 
-import com.mycompany.monopoly.exceptions.NoMoreMoneyException;
-
 /**
  *
  * @author youne
