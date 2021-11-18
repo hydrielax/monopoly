@@ -2,6 +2,8 @@
 package com.mycompany.monopoly;
 
 
+import java.util.List;
+
 public class Joueur {
     private String nom;
     private int fortune;
@@ -13,6 +15,14 @@ public class Joueur {
         this.plateau = plateau;
         this.fortune = 100000;
         this.position = 0;
+    }
+
+    public Joueur(String nom, Plateau plateau, List<Joueur> joueurs) {
+        this.nom = nom;
+        this.plateau = plateau;
+        this.fortune = 100000;
+        this.position = 0;
+        joueurs.add(this);
     }
 
     public Joueur(String nom) {
