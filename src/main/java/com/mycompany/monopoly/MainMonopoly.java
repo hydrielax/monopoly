@@ -5,6 +5,8 @@
  */
 package com.mycompany.monopoly;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Alexis Delage
@@ -12,12 +14,28 @@ package com.mycompany.monopoly;
 public class MainMonopoly{
     public static void main(String[] argv) throws NoMoreMoneyException { 
         int test = 0;
-        
         Joueur j1 = new Joueur("JB");
         Joueur j2 = new Joueur("Marius");
         j1.payer(j2, 1000);
         System.out.println(j1);
         System.out.println(j2);
-        
+
+        Plateau plateau = new Plateau();
+        plateau.initPlateau(); //TODO joueur
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("- Appuyez sur entrée pour continuer la partie");
+        System.out.println("- Appuyez sur 'Q' puis entrée quitter");
+        String in = input.nextLine();
+        while (!in.equals("Q")) {
+            plateau.tourDeJeu();
+            plateau.affiche();
+
+            System.out.println("- Appuyez sur entrée pour continuer la partie");
+            System.out.println("- Appuyez sur 'Q' puis entrée quitter");
+
+            in = input.nextLine();
+        }
+        System.out.println("Vous avez quitté");
     }
 }
