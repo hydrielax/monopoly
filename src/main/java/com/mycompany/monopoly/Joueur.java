@@ -5,15 +5,15 @@ public class Joueur{
     
     private String nom;
     private double fortune;
-    private int position;
+    private Case position;
     private Plateau plateau;
     
 
-    public void Joueur(String nom, Plateau plateau, int pos){
+    public void Joueur(String nom, Plateau plateau, Case pos){
         this.nom = nom;
         this.plateau = new Plateau(plateau);
         this.fortune = 100000;
-        this.position = 0;
+        this.position = pos;
     }
     public void Joueur(String nom){
         this.nom = nom;
@@ -36,7 +36,7 @@ public class Joueur{
     public void setNom(String nom){
         this.nom=nom;
     }
-    public void setPosition(int pos){
+    public void setPosition(Case pos){
         this.position=pos;
     }
     public void setFortune(int fort){
