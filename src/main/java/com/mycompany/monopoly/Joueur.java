@@ -9,13 +9,13 @@ public class Joueur{
     private Plateau plateau;
     
 
-    public void Joueur(String nom, Plateau plateau, int pos){
+    public Joueur(String nom, Plateau plateau){
         this.nom = nom;
         this.plateau = new Plateau(plateau);
         this.fortune = 100000;
         this.position = 0;
     }
-    public void Joueur(String nom){
+    public Joueur(String nom){
         this.nom = nom;
         this.fortune = 100000;
     }
@@ -53,7 +53,7 @@ public class Joueur{
     public void payer(Joueur j, int prix) throws NoMoreMoneyException {
         if (this.fortune>=prix){
             this.fortune=this.fortune-prix;
-            j.setFortune(j.getFortune()+this.fortune;
+            j.setFortune(j.getFortune()+prix+1);
         }
         else{
             j.setFortune(j.getFortune()+this.fortune);
