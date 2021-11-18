@@ -46,12 +46,16 @@ public class MainMonopoly{
 
             p.affiche();
 
+            if(p.finDePartie()) {
+                System.out.println("La partie est terminée !");
+                return;
+            }
+
             System.out.println("- Tapez entrée pour continuer la partie");
             System.out.println("- Tapez 'Q' puis entrée quitter");
 
             in = input.nextLine();
         }
         System.out.println("Vous avez quitté");
-
     }
 }

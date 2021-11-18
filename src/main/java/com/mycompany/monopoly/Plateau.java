@@ -91,7 +91,6 @@ public class Plateau {
         for (var c : cases) {
             System.out.println(Integer.toString(cases.indexOf(c)) + " : " + c.toString());
         }
-
     }
 
     /**
