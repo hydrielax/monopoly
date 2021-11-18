@@ -17,3 +17,9 @@ To generate docs:
 ```sh
 mvn javadoc:javadoc
 ```
+
+To compile jar with dependencies:
+
+```sh
+mvn compile assembly:single
+```
