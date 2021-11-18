@@ -1,5 +1,6 @@
 package com.mycompany.monopoly;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +10,7 @@ import lombok.Setter;
 public class Plateau {
     @Getter
     @Setter
-    private LinkedList<Case> cases;
+    private ArrayList<Case> cases;
 
     @Getter
     @Setter
@@ -23,14 +24,26 @@ public class Plateau {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * Donner le nombre des gares que possède un joueur.
+     * 
+     * @param j Le joueur en question.
+     */
     public int nbgares(Joueur j) {
         return (int) cases.stream().filter(c -> c instanceof Gare g && g.getJoueur().equals(j))
                 .count();
     }
 
+    /**
+     * Indique si la partie est finie.
+     */
     public boolean finDePartie() {
-        // TODO: Finish this method
-        throw new UnsupportedOperationException();
+        // If there is only one player in the game, then the game ends.
+        var isEnded = joueurs.size() == 1;
+        if (isEnded) {
+            System.out.println("Fin de partie, `" + joueurs.get(0) + "` a gagné !");
+        }
+        return isEnded;
     }
 
     public void tourDeJeu() { // TODO: Finish this method
