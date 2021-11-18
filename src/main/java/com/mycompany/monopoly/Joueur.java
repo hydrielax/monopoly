@@ -4,15 +4,15 @@ public class Joueur{
     
     private String nom;
     private int fortune;
-    private Case position;
+    private int position;
     private Plateau plateau;
     
 
-    public Joueur(String nom, Plateau plateau, Case pos){
+    public Joueur(String nom, Plateau plateau){
         this.nom = nom;
-        //this.plateau = new Plateau(plateau);
+        this.plateau = new Plateau(plateau);
         this.fortune = 100000;
-        this.position = pos;
+        this.position = 0;
     }
     public Joueur(String nom){
         this.nom = nom;
@@ -25,7 +25,7 @@ public class Joueur{
     public int getFortune(){
         return this.fortune;
     }
-    public Case getPosition(){
+    public int getPosition(){
         return this.position;
     }
     public Plateau getPlateau(){
@@ -63,15 +63,16 @@ public class Joueur{
     public static int lanceLeDe() {
         return ((int) Math.floor(Math.random()*6))+1;
     }
-    /**
+    
     public void tourDeJeu() throws NoMoreMoneyException{
         // lancer le dé
         int de = lanceLeDe();
         position = plateau.avancer(this.position, de);
-        position.utiliser(this);
+        Case c = plateau.getCases().get(position);
+        c.utiliser(this,de);
         
     }
-    */
+    
 
     public String toString(){
         String res = "vous êtes le joueur " + this.nom + ", vous possedez : " + this.fortune ;
