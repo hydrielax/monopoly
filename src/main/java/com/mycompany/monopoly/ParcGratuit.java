@@ -1,5 +1,5 @@
 package com.mycompany.monopoly;
-public class ParcGratuit extends Case{
+public class ParcGratuit extends NonAchetable{
 
     public ParcGratuit(String nom) {
         super(nom);

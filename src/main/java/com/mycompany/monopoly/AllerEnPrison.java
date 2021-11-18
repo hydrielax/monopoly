@@ -1,5 +1,5 @@
 package com.mycompany.monopoly;
-public class AllerEnPrison extends Case{
+public class AllerEnPrison extends NonAchetable{
     public AllerEnPrison(String nom) {
         super(nom);
     }
