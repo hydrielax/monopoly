@@ -1,99 +1,107 @@
 package com.mycompany.monopoly;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
-import com.mycompany.monopoly.exceptions.NoMoreMoneyException;
+import java.nio.channels.NonReadableChannelException;
+import java.util.ArrayList;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
 
 public class Plateau {
+    @Getter
+    @Setter
+    private ArrayList<Case> cases;
 
-    /**
-     * Liste des cases du plateau
-     */
-    private ArrayList<Case> cases = new ArrayList<>();
-    /**
-     * Liste des joueurs
-     */
-    private LinkedList<Joueur> joueurs = new LinkedList<>();
+    @Getter
+    @Setter
+    private LinkedList<Joueur> joueurs;
 
-    /**
-     * Créer les cases et les joueurs
-     */
+    public Plateau() {
+        // constructor without parameters
+        cases = new ArrayList<Case>();
+        joueurs = new LinkedList<Joueur>();
+
+    }
+
     public void initPlateau() { // TODO: Finish this method
-        ArrayList<String> strInit = new ArrayList<String>();
-        strInit.add()
-        
-        
+        cases.add(new Depart());
+        cases.add(new Constructible("Mediter Ranean Avenue", 60));
+        cases.add(new NonAchetable("Community Chest"));
+        cases.add(new Constructible("Baltic Avenue", 60));
+        cases.add(new NonAchetable("Income Tax"));
+
+        cases.add(new Gare("Reading Railroad", 200));
+
+        cases.add(new Constructible("Oriental Avenue", 100));
+        cases.add(new NonAchetable("Chance", 0));
+        cases.add(new Constructible("Vermont Avenue", 100));
+        cases.add(new Constructible("Connecticut Avenue", 120));
+
+        cases.add(new Prison());
+
+        cases.add(new Constructible("St. Charles Place", 140));
+        cases.add(new Constructible("Electric Company", 150));
+        cases.add(new Constructible("States Avenue", 140));
+        cases.add(new Constructible("Virginia Avenue", 160));
+
+        cases.add(new Gare("Pensylvania Railroad", 200));
+
+        cases.add(new Constructible("St. James Place", 180));
+        cases.add(new NonAchetable("Community Chest"));
+        cases.add(new Constructible("Tennessee Avenue", 180));
+        cases.add(new Constructible("New York Avenue", 200));
+
+        cases.add(new ParcGratuit());
+
+        cases.add(new Constructible("Kentucky Avenue", 220));
+        cases.add(new NonAchetable("Chance"));
+        cases.add(new Constructible("Indiana Avenue", 220));
+        cases.add(new Constructible("Illinois Avenue", 240));
+
+        cases.add(new Gare("B.& O. Railroad", 200));
+
+        cases.add(new Constructible("Atalantic Avenue", 260));
+        cases.add(new Constructible("Ventnor Avenue", 260));
+        cases.add(new NonAchetable("Water Works"));
+        cases.add(new Constructible("Marvin Gardens", 280));
+        cases.add(new AllerEnPrison());
+
+        cases.add(new Constructible("Pacific Avenue", 300));
+        cases.add(new Constructible("North Carolina Avenue", 300));
+        cases.add(new NonAchetable("Community Chest"));
+        cases.add(new Constructible("Pensylvania Avenue", 320));
+
+        cases.add(new Gare("Short line", 200));
+
+        cases.add(new NonAchetable("Chance"));
+        cases.add(new Constructible("Park Place", 350));
+        cases.add(new NonAchetable("Luxury Tax"));
+        cases.add(new Constructible("Boardwalk", 400));
 
         throw new UnsupportedOperationException();
 
     }
 
-    /**
-     * Afficher le plateau
-     */
     public void affiche() { // TODO: Finish this method
         throw new UnsupportedOperationException();
     }
 
-    /**
-     * Donner le nombre des gares que possède un joueur.
-     * 
-     * @param j Le joueur en question.
-     * @return nombre de gare pour le joueur
-     */
-    public int nbGares(Joueur j) {
-        return (int) cases.stream().filter(c -> c instanceof Gare g && g.getJoueur().equals(j)).count();
+    public int nbgares(Joueur j) {
+        return (int) cases.stream().filter(c -> c instanceof Gare g && g.getJoueur() == j).count();
     }
 
-    /**
-     * Indique si la partie est finie.
-     * 
-     * @return vrai si la partie est finie
-     */
     public boolean finDePartie() {
-        // If there is only one player in the game, then the game ends.
-        var isEnded = joueurs.size() <= 1;
-        if (joueurs.size() == 1) {
-            System.out.println("Fin de partie, `" + joueurs.get(0).getNom() + "` a gagné !");
-        }
-        return isEnded;
+        // TODO: Finish this method
+        throw new UnsupportedOperationException();
     }
 
-    /**
-     * Joue un tour de jeu
-     */
-    public void tourDeJeu() {
-        Iterator<Joueur> iter = joueurs.iterator();
-        while (iter.hasNext()) {
-            Joueur j = iter.next();
-            try {
-                j.tourDeJeu();
-            } catch (NoMoreMoneyException e) {
-                joueurs.remove(j);
-                Iterator<Case> iterCase = cases.iterator();
-                while (iterCase.hasNext()) {
-                    Case c = iterCase.next();
-                    if (c instanceof Achetable a) {
-                        a.faillite(j);
-                    }
-                }
-            }
-        }
+    public void tourDeJeu() { // TODO: Finish this method
+        throw new UnsupportedOperationException();
     }
 
-    /**
-     * Avance d'un nombre de cases donné en paramètre
-     * 
-     * @param c Index de la case d'origine
-     * @param d Nombre de cases à avancer
-     * @return Index de la nouvelle case
-     */
-    public int avance(int c, int d) {
-        return (c + d) % cases.size();
+    public Case avance(Case c, int d) {
+        // TODO: Finish this method
+        throw new UnsupportedOperationException();
     }
 }
