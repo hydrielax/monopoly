@@ -3,19 +3,16 @@ package com.mycompany.monopoly;
 public class Constructible extends Achetable {
     private int nbMaison;
     private int nbHotel;
-    double prixMaison = 100;
-    double prixHotel = 1000;
+    int prixMaison = 100;
+    int prixHotel = 1000;
 
     public Constructible() {
         this.nbMaison = 0;
         this.nbHotel = 0;
     }
 
-    public double loyer() {
-        if(super().propietaire == null){
-            return 0;
-        }
-        double res = nbMaison * prixMaison + nbHotel * prixHotel;
+    public int loyer() {
+        int res = nbMaison * prixMaison + nbHotel * prixHotel;
         return res;
     }
 
@@ -42,17 +39,9 @@ public class Constructible extends Achetable {
     public void ajoutHotel() {
         nbHotel += 1;
     }
-    
-    public void setPrixMaison(double newPrix){
-        prixMaison = newPrix;
-    }
-    
-    public void setPrixHotel(double newPrix){
-        prixHotel = newPrix;
-    }
 
     public void faillite(Joueur j){
-        if(this.proprietaire == j){
+        if(this.getProprietaire() == j){
             super.faillite(j);
             this.nbMaison = 0;
             this.nbHotel = 0;

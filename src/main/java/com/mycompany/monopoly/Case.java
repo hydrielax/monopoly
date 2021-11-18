@@ -15,6 +15,16 @@ public abstract class Case {
     public Case(String nom) {
         this.nom = nom;
     }
-    abstract void utiliser();
+    public abstract void utiliser(Joueur j);
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+    
+    
     
 }

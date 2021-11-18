@@ -17,23 +17,12 @@ public class Gare extends Achetable{
         this.loyer = 0;
     }
     public int loyer(){
-        
+        return this.loyer;
     }
     @Override
-    public void utiliser(){
+    public void utiliser(Joueur j){
         
     }
-    public void faillite(Joueur j){
-        
-    }
-    @Override
-    public String toString(){
-        System.out.print(this.getNom()+ " (coût :" + this.getPrix());
-    }
-    
-    public void acheter(){  
-    }
-    
     
     
 }
