@@ -15,6 +15,13 @@ public class Constructible extends Achetable {
         return res;
     }
 
+    
+    /**
+     * 
+     * @param j joueur
+     * @param valeurDe valeur du dé
+     * @throws NoMoreMoneyException si le joueur n'a pas assez d'argent
+     */
     @Override
     public void utiliser(Joueur j, int valeurDe) throws NoMoreMoneyException {
         if(getProprietaire() == null) {
@@ -28,7 +35,10 @@ public class Constructible extends Achetable {
             j.payer(getProprietaire(), loyer);
         }
     }
-
+    /**
+     * gère la faillite du joueur au niveau de ses propriété
+     * @param j joueur
+     */
     @Override
     public void faillite(Joueur j){
         if(this.getProprietaire() == j){

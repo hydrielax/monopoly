@@ -55,7 +55,12 @@ public class Joueur {
     public int nbGares() {
         return this.plateau.nbGares(this);
     }
-
+    /**
+     * permet le payment entre le joueur de cette instance et un autre joueur
+     * @param j joueur qui doit payer
+     * @param prix prix à payer
+     * @throws NoMoreMoneyException 
+     */
     public void payer(Joueur j, int prix) throws NoMoreMoneyException {
         if (this.fortune >= prix) {
             this.fortune = this.fortune - prix;
@@ -65,11 +70,14 @@ public class Joueur {
             throw new NoMoreMoneyException();
         }
     }
-
+    /**
+     * lancer de dé aléatoire, entre 1 et 6
+     * @return valeur du dé
+     */
     public static int lanceLeDe() {
         return ((int) Math.floor(Math.random() * 6)) + 1;
     }
-
+    
     public void tourDeJeu() throws NoMoreMoneyException {
         // lancer le dé
         int de = lanceLeDe();

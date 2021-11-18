@@ -21,14 +21,22 @@ public class Gare extends Achetable{
         super(j, prix, nom);
         this.loyer = 2500;
     }
-
+    /**
+     * calcul le loyer
+     * @return entier
+     */
     public int loyer(){
         if(getProprietaire() != null) {
             return loyer * getProprietaire().nbGares();
         }
         return this.loyer;
     }
-
+    /**
+     * permet l'utilisation d'une gare
+     * @param j joueur
+     * @param valeurDe valeur du dé
+     * @throws NoMoreMoneyException 
+     */
     @Override
     public void utiliser(Joueur j, int valeurDe) throws NoMoreMoneyException {
         if(getProprietaire() == null) {

@@ -9,12 +9,18 @@ public abstract class Achetable extends Case {
     private Joueur proprietaire;
     private final int prix;
 
+    /**
+     * constructeur 
+     * @param proprietaire le proprietaire
+     * @param prix le prix de la case
+     * @param nom le nom de la case
+     */
     public Achetable(Joueur proprietaire, int prix, String nom) {
         super(nom);
         this.proprietaire = proprietaire;
         this.prix = prix;
     }
-
+    
     public Achetable(int prix, String nom) {
         super(nom);
         this.prix = prix;
@@ -28,7 +34,10 @@ public abstract class Achetable extends Case {
             return this.getNom() + " (coût :" + this.getPrix() + "€) - Sans proprietaire";
         }
     }
-
+    /**
+     * méthode pour gérer la faillite d'un joueur
+     * @param j joueur
+     */
     public void faillite(Joueur j) {
         if (this.proprietaire == j) {
             this.setProprietaire(null);
