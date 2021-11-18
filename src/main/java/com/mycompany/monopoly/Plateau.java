@@ -23,8 +23,8 @@ public class Plateau {
         throw new UnsupportedOperationException();
     }
 
-    public int nbgares() { // TODO: Finish this method
-        throw new UnsupportedOperationException();
+    public int nbgares(Joueur j) {
+        return (int) cases.stream().filter(c -> c instanceof Gare g && g.getJoueur() == j).count();
     }
 
     public boolean finDePartie() {
