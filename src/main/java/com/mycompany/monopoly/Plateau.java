@@ -24,7 +24,6 @@ public class Plateau {
      * Créer les cases et les joueurs
      */
     public void initPlateau() { // TODO: Finish this method
-<<<<<<< HEAD
         cases.add(new Depart());
         cases.add(new Constructible("Mediter Ranean Avenue", 60));
         cases.add(new NonAchetable("Community Chest"));
@@ -78,13 +77,6 @@ public class Plateau {
         cases.add(new Constructible("Park Place", 350));
         cases.add(new NonAchetable("Luxury Tax"));
         cases.add(new Constructible("Boardwalk", 400));
-=======
-        ArrayList<String> strInit = new ArrayList<String>();
-        strInit.add()
-        
-        
->>>>>>> parent of 35e1400 (feat: initPlateau)
-
     }
 
     /**
