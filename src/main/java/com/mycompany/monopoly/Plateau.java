@@ -9,23 +9,33 @@ import lombok.Setter;
 
 @AllArgsConstructor
 public class Plateau {
-
+    
+    /**
+     * Liste des cases du plateau
+     */
     private ArrayList<Case> cases;
-
+    /**
+     * Liste des joueurs
+     */
     private LinkedList<Joueur> joueurs;
     
+    /**
+     * Créer les cases et les joueurs
+     */
     public void initPlateau() { // TODO: Finish this method
         throw new UnsupportedOperationException();
     }
-
+    /**
+     * Afficher le plateau
+     */
     public void affiche() { // TODO: Finish this method
         throw new UnsupportedOperationException();
     }
 
     /**
      * Donner le nombre des gares que possède un joueur.
-     * 
      * @param j Le joueur en question.
+     * @return nombre de gare pour le joueur
      */
     public int nbGares(Joueur j) {
         return (int) cases.stream().filter(c -> c instanceof Gare g && g.getJoueur().equals(j))
@@ -34,16 +44,20 @@ public class Plateau {
 
     /**
      * Indique si la partie est finie.
+     * @return vrai si la partie est finie
      */
     public boolean finDePartie() {
         // If there is only one player in the game, then the game ends.
-        var isEnded = joueurs.size() == 1;
-        if (isEnded) {
+        var isEnded = joueurs.size() <= 1;
+        if (joueurs.size() == 1) {
             System.out.println("Fin de partie, `" + joueurs.get(0).getNom() + "` a gagné !");
         }
         return isEnded;
     }
-
+    
+    /**
+     * Joue un tour de jeu
+     */
     public void tourDeJeu() {
         Iterator<Joueur> iter = joueurs.iterator();
         while (iter.hasNext()) {
@@ -62,7 +76,13 @@ public class Plateau {
             }
         }
     }
-
+    
+    /**
+     * Avance d'un nombre de cases donné en paramètre
+     * @param c Index de la case d'origine
+     * @param d Nombre de cases à avancer
+     * @return Index de la nouvelle case
+     */
     public int avance(int c, int d) {
         return (c + d) % cases.size();
     }
