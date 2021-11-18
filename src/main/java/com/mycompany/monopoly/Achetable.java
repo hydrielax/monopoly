@@ -5,14 +5,8 @@
  */
 package com.mycompany.monopoly;
 
-/**
- *
- * @author youne
- */
-public abstract class Achetable extends Case {
-    private Joueur proprietaire;
-    private int prix;
 
+<<<<<<< HEAD
     public Achetable(Joueur proprietaire, int prix, String nom) {
         super(nom);
         this.proprietaire = proprietaire;
@@ -46,5 +40,15 @@ public abstract class Achetable extends Case {
 
 
     
+>>>>>>> 7638fa5bc58761bada67b7783082a4c75605c3ac
     
+    @Override
+    public String toString() {
+        // TODO: Finish this method
+        throw new UnsupportedOperationException();
+        /*
+         * return "le" + this.joueur.getName() + " a acheté une propriété pour " +
+         * this.joueur.getPrix())
+         */
+    }
 }

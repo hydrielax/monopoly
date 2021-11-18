@@ -10,6 +10,8 @@ package com.mycompany.monopoly;
  * @author Alexis Delage
  */
 public class MainMonopoly {
-    public static void main(String[] argv) {
+    public static void main(String[] argv) { 
+        int test = 0;
+        
     }
 }

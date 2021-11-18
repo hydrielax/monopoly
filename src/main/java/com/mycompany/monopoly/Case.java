@@ -11,8 +11,10 @@ package com.mycompany.monopoly;
  */
 public abstract class Case {
     private String nom;
-    
-    
+
+    public Case(String nom) {
+        this.nom = nom;
+    }
     abstract void utiliser();
     
 }

@@ -1,18 +1,61 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.monopoly;
 
-/**
- *
- * @author youne
- */
-public class Constructible extends Achetable{
+public class Constructible extends Achetable {
     private int nbMaison;
     private int nbHotel;
-    private int prixMaison;
-    private int prixHotel;
+    double prixMaison = 100;
+    double prixHotel = 1000;
+
+    public Constructible() {
+        this.nbMaison = 0;
+        this.nbHotel = 0;
+    }
+
+    public double loyer() {
+        if(super().propietaire == null){
+            return 0;
+        }
+        double res = nbMaison * prixMaison + nbHotel * prixHotel;
+        return res;
+    }
+
+    public int getNbMaison() {
+        return nbMaison;
+    }
+
+    public int getNbHotel() {
+        return nbHotel;
+    }
+
+    public double getPrixMaison() {
+        return prixMaison;
+    }
+
+    public double getPrixHotel() {
+        return prixHotel;
+    }
     
+    public void ajoutMaison() {
+        nbMaison += 1;
+    }
+
+    public void ajoutHotel() {
+        nbHotel += 1;
+    }
+    
+    public void setPrixMaison(double newPrix){
+        prixMaison = newPrix;
+    }
+    
+    public void setPrixHotel(double newPrix){
+        prixHotel = newPrix;
+    }
+
+    public void faillite(Joueur j){
+        if(this.proprietaire == j){
+            super.faillite(j);
+            this.nbMaison = 0;
+            this.nbHotel = 0;
+        }
+    }
 }
