@@ -25,7 +25,7 @@ public class Plateau {
         this.joueurs = joueurs;
         
         cases.add(new Depart());
-        cases.add(new Constructible("Mediter Ranean Avenue", 60));
+        cases.add(new Constructible("Mediter-Ranean Avenue", 60));
         cases.add(new NonAchetable("Community Chest"));
         cases.add(new Constructible("Baltic Avenue", 60));
         cases.add(new NonAchetable("Income Tax"));
@@ -44,7 +44,7 @@ public class Plateau {
         cases.add(new Constructible("States Avenue", 140));
         cases.add(new Constructible("Virginia Avenue", 160));
 
-        cases.add(new Gare("Pensylvania Railroad", 200));
+        cases.add(new Gare("Pennsylvania Railroad", 200));
 
         cases.add(new Constructible("St. James Place", 180));
         cases.add(new NonAchetable("Community Chest"));
@@ -60,7 +60,7 @@ public class Plateau {
 
         cases.add(new Gare("B.& O. Railroad", 200));
 
-        cases.add(new Constructible("Atalantic Avenue", 260));
+        cases.add(new Constructible("Atlantic Avenue", 260));
         cases.add(new Constructible("Ventnor Avenue", 260));
         cases.add(new NonAchetable("Water Works"));
         cases.add(new Constructible("Marvin Gardens", 280));
@@ -69,7 +69,7 @@ public class Plateau {
         cases.add(new Constructible("Pacific Avenue", 300));
         cases.add(new Constructible("North Carolina Avenue", 300));
         cases.add(new NonAchetable("Community Chest"));
-        cases.add(new Constructible("Pensylvania Avenue", 320));
+        cases.add(new Constructible("Pennsylvania Avenue", 320));
 
         cases.add(new Gare("Short line", 200));
 
@@ -83,9 +83,15 @@ public class Plateau {
      * Afficher le plateau
      */
     public void affiche() { // TODO: Finish this method
-        for (var c : cases) {
-            System.out.println(c);
+        System.out.println("Liste des joueurs : ");
+        for (var j : joueurs) {
+            System.out.println(Integer.toString(cases.indexOf(j)) + " : " + j.toString());
         }
+        System.out.println("Liste des cases : ");
+        for (var c : cases) {
+            System.out.println(Integer.toString(cases.indexOf(c)) + " : " + c.toString());
+        }
+
     }
 
     /**
