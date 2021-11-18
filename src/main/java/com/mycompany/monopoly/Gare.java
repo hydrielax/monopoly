@@ -20,11 +20,14 @@ public class Gare extends Achetable{
     }
 
     public int loyer(){
+        if(getProprietaire() != null) {
+            return loyer * getProprietaire().nbGares();
+        }
         return this.loyer;
     }
 
     @Override
-    public void utiliser(Joueur j) throws NoMoreMoneyException {
+    public void utiliser(Joueur j, int valeurDe) throws NoMoreMoneyException {
         if(getProprietaire() == null) {
             //todo si dé impair
             if(j.getFortune() >= getPrix()) {
@@ -32,8 +35,15 @@ public class Gare extends Achetable{
                 j.setFortune(j.getFortune()-getPrix());
             }
         } else if(getProprietaire() != j) {
-            int loyer = loyer() * j.nbGares();
+            int loyer = loyer();
             j.payer(getProprietaire(), loyer);
         }
+    }
+
+    @Override
+    public String toString() {
+        String s = super.toString();
+        s += ", loyer = "+loyer()+"€";
+        return s;
     }
 }

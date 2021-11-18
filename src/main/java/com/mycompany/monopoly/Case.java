@@ -8,7 +8,6 @@ package com.mycompany.monopoly;
 import com.mycompany.monopoly.exceptions.NoMoreMoneyException;
 
 /**
- *
  * @author youne
  */
 public abstract class Case {
@@ -17,7 +16,15 @@ public abstract class Case {
     public Case(String nom) {
         this.nom = nom;
     }
-    public abstract void utiliser(Joueur j) throws NoMoreMoneyException;
+
+    /**
+     * Effectue l'action de la case sur le joueur j
+     *
+     * @param j Joueur qui vient d'arriver sur la case
+     * @param valeurDe Valeur de son lancé de dés
+     * @throws NoMoreMoneyException Si le joueur ne peut pas payer un loyer
+     */
+    public abstract void utiliser(Joueur j, int valeurDe) throws NoMoreMoneyException;
 
     public String getNom() {
         return nom;
@@ -26,7 +33,4 @@ public abstract class Case {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
-    
-    
 }

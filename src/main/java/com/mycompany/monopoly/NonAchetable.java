@@ -12,7 +12,7 @@ public class NonAchetable extends Case
     }
 
     @Override
-    public void utiliser(Joueur j) {
+    public void utiliser(Joueur j, int valeurDe) {
         //vide
     }
 }

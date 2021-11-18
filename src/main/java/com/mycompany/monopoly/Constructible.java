@@ -19,7 +19,7 @@ public class Constructible extends Achetable {
     }
 
     @Override
-    public void utiliser(Joueur j) throws NoMoreMoneyException {
+    public void utiliser(Joueur j, int valeurDe) throws NoMoreMoneyException {
         if(getProprietaire() == null) {
             //todo si dé impair
             if(j.getFortune() >= getPrix()) {
@@ -30,6 +30,28 @@ public class Constructible extends Achetable {
             int loyer = loyer();
             j.payer(getProprietaire(), loyer);
         }
+    }
+
+    @Override
+    public void faillite(Joueur j){
+        if(this.getProprietaire() == j){
+            super.faillite(j);
+            this.nbMaison = 0;
+            this.nbHotel = 0;
+        }
+    }
+
+    @Override
+    public String toString() {
+        String s = super.toString();
+        if(nbMaison > 0) {
+            s += ", "+nbMaison+" maisons";
+        }
+        if(nbHotel > 0) {
+            s += ", "+nbHotel+" hotels";
+        }
+        s += ", loyer = "+loyer()+"€";
+        return s;
     }
 
     public int getNbMaison() {
@@ -54,13 +76,5 @@ public class Constructible extends Achetable {
 
     public void ajoutHotel() {
         nbHotel += 1;
-    }
-
-    public void faillite(Joueur j){
-        if(this.getProprietaire() == j){
-            super.faillite(j);
-            this.nbMaison = 0;
-            this.nbHotel = 0;
-        }
     }
 }

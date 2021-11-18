@@ -4,7 +4,7 @@ public class AllerEnPrison extends Case{
         super(nom);
     }
     
-    public void utiliser(Joueur j){
+    public void utiliser(Joueur j, int valeurDe){
         
     }
     @Override
