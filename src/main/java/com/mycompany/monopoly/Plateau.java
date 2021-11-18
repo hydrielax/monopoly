@@ -82,7 +82,9 @@ public class Plateau {
     }
 
     public void affiche() { // TODO: Finish this method
-        throw new UnsupportedOperationException();
+        for (var c : cases) {
+            System.out.println(c);
+        }
     }
 
     public int nbgares(Joueur j) {
