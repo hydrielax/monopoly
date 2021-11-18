@@ -1,10 +1,13 @@
 package com.mycompany.monopoly;
 
-public class Joueur{
+import lombok.Getter;
+
+public class Joueur {
+    @Getter
     private String nom;
     private double fortune;
     private int position;
     private Plateau plateau;
 
-    
+
 }
