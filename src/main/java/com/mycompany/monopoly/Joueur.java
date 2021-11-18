@@ -53,7 +53,7 @@ public class Joueur{
     public void payer(Joueur j, int prix) throws NoMoreMoneyException {
         if (this.fortune>=prix){
             this.fortune=this.fortune-prix;
-            j.setFortune(j.getFortune()+prix+1);
+            j.setFortune(j.getFortune()+prix);
         }
         else{
             j.setFortune(j.getFortune()+this.fortune);
