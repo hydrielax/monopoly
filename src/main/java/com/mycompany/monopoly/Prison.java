@@ -1,7 +1,7 @@
 package com.mycompany.monopoly;
-public abstract Depart extends Case{
+public class Prison extends Case{
     public String toString(){
-        String res = "Vous êtes sur la prison"
-        return res
+        String res = "Vous êtes sur la case départ";
+        return res;
     }
 }
