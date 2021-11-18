@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.monopoly;
+import java.util.LinkedList;
 
 import java.util.Scanner;
 
@@ -12,8 +13,7 @@ import java.util.Scanner;
  * @author Alexis Delage
  */
 public class MainMonopoly{
-    public static void main(String[] argv) throws NoMoreMoneyException { 
-        int test = 0;
+    public static void main(String[] argv) throws NoMoreMoneyException {
         Joueur j1 = new Joueur("JB");
         Joueur j2 = new Joueur("Marius");
         j1.payer(j2, 1000);
@@ -37,5 +37,11 @@ public class MainMonopoly{
             in = input.nextLine();
         }
         System.out.println("Vous avez quitté");
+        LinkedList<Joueur> liste = new LinkedList();
+        liste.add(j1);
+        liste.add(j2);
+        Plateau p = new Plateau();
+        p.initPlateau(liste);
+
     }
 }
