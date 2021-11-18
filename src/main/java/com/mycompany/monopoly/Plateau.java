@@ -5,8 +5,10 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import com.mycompany.monopoly.exceptions.NoMoreMoneyException;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.val;
 
-@AllArgsConstructor
 public class Plateau {
 
     /**
@@ -22,7 +24,13 @@ public class Plateau {
      * Créer les cases et les joueurs
      */
     public void initPlateau() { // TODO: Finish this method
+        ArrayList<String> strInit = new ArrayList<String>();
+        strInit.add()
+        
+        
+
         throw new UnsupportedOperationException();
+
     }
 
     /**
@@ -39,8 +47,7 @@ public class Plateau {
      * @return nombre de gare pour le joueur
      */
     public int nbGares(Joueur j) {
-        return (int) cases.stream().filter(c -> c instanceof Gare g && g.getJoueur().equals(j))
-                .count();
+        return (int) cases.stream().filter(c -> c instanceof Gare g && g.getJoueur().equals(j)).count();
     }
 
     /**
