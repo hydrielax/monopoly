@@ -21,7 +21,7 @@ public class Plateau {
     /**
      * Créer les cases et les joueurs
      */
-    public void initPlateau(LinkedList<Joueur> joueurs) { // TODO: Finish this method
+    public void initPlateau(LinkedList<Joueur> joueurs) {
         this.joueurs = joueurs;
         
         cases.add(new Depart());
@@ -82,7 +82,7 @@ public class Plateau {
     /**
      * Afficher le plateau
      */
-    public void affiche() { // TODO: Finish this method
+    public void affiche() {
         System.out.println("Liste des joueurs : ");
         for (var j : joueurs) {
             System.out.println("- " + j.toString());

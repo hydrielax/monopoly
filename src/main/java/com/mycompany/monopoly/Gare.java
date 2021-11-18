@@ -40,14 +40,17 @@ public class Gare extends Achetable{
     @Override
     public void utiliser(Joueur j, int valeurDe) throws NoMoreMoneyException {
         if(getProprietaire() == null) {
-            //todo si dé impair
-            if(j.getFortune() >= getPrix()) {
-                setProprietaire(j);
-                j.setFortune(j.getFortune()-getPrix());
+            if(valeurDe % 2 == 1) {
+                if (j.getFortune() >= getPrix()) {
+                    setProprietaire(j);
+                    j.setFortune(j.getFortune() - getPrix());
+                    System.out.println(j.getNom() + " achète " + this + " !");
+                }
             }
         } else if(getProprietaire() != j) {
             int loyer = loyer();
             j.payer(getProprietaire(), loyer);
+            System.out.println(j.getNom() + " paye le loyer de " + this.getNom() + " à " + getProprietaire().getNom() + " !");
         }
     }
 
