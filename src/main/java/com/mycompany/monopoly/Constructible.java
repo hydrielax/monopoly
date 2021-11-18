@@ -15,4 +15,12 @@ public class Constructible extends Achetable{
     private int prixMaison;
     private int prixHotel;
     
+
+    public void faillite(Joueur j){
+        if(this.proprietaire == j){
+            super.faillite(j);
+            this.nbMaison = 0;
+            this.nbHotel = 0;
+        }
+    }
 }

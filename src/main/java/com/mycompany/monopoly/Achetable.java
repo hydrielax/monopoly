@@ -12,5 +12,11 @@ package com.mycompany.monopoly;
 public abstract class Achetable extends Case {
     private Joueur proprietaire;
     private int prix;
+
+    public void faillite(Joueur j){
+        if(this.proprietaire == j){
+            this.proprietaire = null;
+        }
+    }
     
 }
