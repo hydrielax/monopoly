@@ -5,6 +5,8 @@
  */
 package com.mycompany.monopoly;
 
+import com.mycompany.monopoly.exceptions.NoMoreMoneyException;
+
 /**
  *
  * @author youne
@@ -15,7 +17,7 @@ public abstract class Case {
     public Case(String nom) {
         this.nom = nom;
     }
-    public abstract void utiliser(Joueur j);
+    public abstract void utiliser(Joueur j) throws NoMoreMoneyException;
 
     public String getNom() {
         return nom;

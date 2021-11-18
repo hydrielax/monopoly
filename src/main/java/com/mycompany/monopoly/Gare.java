@@ -5,24 +5,35 @@
  */
 package com.mycompany.monopoly;
 
+import com.mycompany.monopoly.exceptions.NoMoreMoneyException;
+
 /**
  *
  * @author youne
  */
 public class Gare extends Achetable{
-    private int loyer;
+    private final int loyer;
     
     public Gare(Joueur j, int prix, String nom){
         super(j, prix, nom);
-        this.loyer = 0;
+        this.loyer = 2500;
     }
+
     public int loyer(){
         return this.loyer;
     }
+
     @Override
-    public void utiliser(Joueur j){
-        
+    public void utiliser(Joueur j) throws NoMoreMoneyException {
+        if(getProprietaire() == null) {
+            //todo si dé impair
+            if(j.getFortune() >= getPrix()) {
+                setProprietaire(j);
+                j.setFortune(j.getFortune()-getPrix());
+            }
+        } else if(getProprietaire() != j) {
+            int loyer = loyer() * j.nbGares();
+            j.payer(getProprietaire(), loyer);
+        }
     }
-    
-    
 }

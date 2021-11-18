@@ -1,5 +1,7 @@
 package com.mycompany.monopoly;
 
+import com.mycompany.monopoly.exceptions.NoMoreMoneyException;
+
 public class Constructible extends Achetable {
     private int nbMaison;
     private int nbHotel;
@@ -17,8 +19,17 @@ public class Constructible extends Achetable {
     }
 
     @Override
-    public void utiliser(Joueur j) {
-
+    public void utiliser(Joueur j) throws NoMoreMoneyException {
+        if(getProprietaire() == null) {
+            //todo si dé impair
+            if(j.getFortune() >= getPrix()) {
+                setProprietaire(j);
+                j.setFortune(j.getFortune()-getPrix());
+            }
+        } else if(getProprietaire() != j) {
+            int loyer = loyer();
+            j.payer(getProprietaire(), loyer);
+        }
     }
 
     public int getNbMaison() {
