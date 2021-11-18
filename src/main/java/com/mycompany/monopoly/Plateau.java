@@ -91,7 +91,9 @@ public class Plateau {
      * Afficher le plateau
      */
     public void affiche() { // TODO: Finish this method
-        throw new UnsupportedOperationException();
+        for (var c : cases) {
+            System.out.println(c);
+        }
     }
 
     /**
