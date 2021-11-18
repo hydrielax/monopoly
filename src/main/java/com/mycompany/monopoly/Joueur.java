@@ -2,6 +2,7 @@ package com.mycompany.monopoly;
 import static java.lang.Math;
 
 public class Joueur{
+    
     private String nom;
     private double fortune;
     private int position;
@@ -13,7 +14,32 @@ public class Joueur{
         this.plateau = plateau;
     }
     
-    
+    public String getNom(){
+        return this.nom;
+    }
+    public int getFortune(){
+        return this.fortune;
+    }
+    public Case getPosition(){
+        return this.position;
+    }
+    public Plateau getPlateau(){
+        return this.plateau;
+    }
+
+    public void setNom(String nom){
+        this.nom=nom;
+    }
+    public void setPosition(int pos){
+        this.position=pos;
+    }
+    public void setFortune(int fort){
+        this.fortune = fort;
+    }
+    public void setPlateau(Plateau plat){
+        this.plateau = plat;
+    }
+
     public int nbGares(){
         return(this.plateau.nbGares(this))
     }
