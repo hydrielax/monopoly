@@ -18,5 +18,9 @@ public abstract class Achetable extends Case {
             this.proprietaire = null;
         }
     }
+    @Override
+    public toString(){
+        System.out.println("le" + this.joueur.getName() + " a acheté une propriété pour " + this.joueur.getPrix())
+    }
     
 }
