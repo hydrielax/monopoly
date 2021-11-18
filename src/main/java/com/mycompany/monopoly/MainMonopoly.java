@@ -12,6 +12,6 @@ package com.mycompany.monopoly;
 public class MainMonopoly {
     public static void main(String[] argv) { 
         int test = 0;
-        
+        Joueur j = new Joueur()
     }
 }
