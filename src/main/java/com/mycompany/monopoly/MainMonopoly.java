@@ -17,25 +17,27 @@ public class MainMonopoly{
         Plateau p = new Plateau();
         Joueur j1 = new Joueur("JB", p);
         Joueur j2 = new Joueur("Marius", p);
-        j1.payer(j2, 1000);
-        System.out.println(j1);
-        System.out.println(j2);
 
-        LinkedList<Joueur> liste = new LinkedList();
+        LinkedList<Joueur> liste = new LinkedList<>();
         liste.add(j1);
         liste.add(j2);
         p.initPlateau(liste);
 
         Scanner input = new Scanner(System.in);
-        System.out.println("- Appuyez sur entrée pour continuer la partie");
-        System.out.println("- Appuyez sur 'Q' puis entrée quitter");
-        String in = input.nextLine();
+        System.out.println("Début de la partie !");
+        System.out.println("");
+        String in = "";
         while (!in.equals("Q")) {
+            System.out.println("Actions des joueurs :");
+
             p.tourDeJeu();
+
+            System.out.println("===================");
+
             p.affiche();
 
-            System.out.println("- Appuyez sur entrée pour continuer la partie");
-            System.out.println("- Appuyez sur 'Q' puis entrée quitter");
+            System.out.println("- Tapez entrée pour continuer la partie");
+            System.out.println("- Tapez 'Q' puis entrée quitter");
 
             in = input.nextLine();
         }
