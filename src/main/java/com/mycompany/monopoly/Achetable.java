@@ -4,30 +4,39 @@
  * and open the template in the editor.
  */
 package com.mycompany.monopoly;
-
-
-<<<<<<< HEAD
+public abstract class Achetable extends Case{
+    private Joueur proprietaire;
+    private final int prix;
+    
     public Achetable(Joueur proprietaire, int prix, String nom) {
         super(nom);
         this.proprietaire = proprietaire;
         this.prix = prix;
     }
-
+    
     public Achetable(int prix, String nom) {
         super(nom);
         this.prix = prix;
     }
     
-    public Achetable(String nom){
-        super(nom);
+    @Override
+    public String toString() {
+        // TODO: Finish this method
+        if (this.proprietaire != null) {
+            return this.getNom() + "(Coût : " + this.getPrix() +") - prorpiétaire:" +this.getProprietaire().getNom();
+        } else {
+            return this.getNom() + " (coût :" + this.getPrix() + ") - Sans proprietaire";
+        }    
+    }
+    
+    public void faillite(Joueur j){
+        if(this.proprietaire == j){
+             this.setProprietaire(null);
+        }
     }
     
     public int getPrix() {
         return prix;
-    }
-
-    public void setPrix(int prix) {
-        this.prix = prix;
     }
 
     public Joueur getProprietaire() {
@@ -37,18 +46,5 @@ package com.mycompany.monopoly;
     public void setProprietaire(Joueur proprietaire) {
         this.proprietaire = proprietaire;
     }
-
-
-    
->>>>>>> 7638fa5bc58761bada67b7783082a4c75605c3ac
-    
-    @Override
-    public String toString() {
-        // TODO: Finish this method
-        throw new UnsupportedOperationException();
-        /*
-         * return "le" + this.joueur.getName() + " a acheté une propriété pour " +
-         * this.joueur.getPrix())
-         */
-    }
+   
 }
