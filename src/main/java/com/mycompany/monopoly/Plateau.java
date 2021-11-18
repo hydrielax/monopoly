@@ -1,5 +1,7 @@
 package com.mycompany.monopoly;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -9,6 +11,7 @@ public class Plateau {
     /**
      * Liste des cases du plateau
      */
+    @Getter
     private final ArrayList<Case> cases = new ArrayList<>();
     /**
      * Liste des joueurs
@@ -138,13 +141,5 @@ public class Plateau {
      */
     public int avance(int c, int d) {
         return (c + d) % cases.size();
-    }
-
-    public ArrayList<Case> getCases() {
-        return cases;
-    }
-
-    public LinkedList<Joueur> getJoueurs() {
-        return joueurs;
     }
 }
