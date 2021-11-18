@@ -1,7 +1,14 @@
 package com.mycompany.monopoly;
 
-public abstract class Achetable {
+import lombok.Getter;
+import lombok.Setter;
+
+public abstract class Achetable extends Case {
+    @Getter
+    @Setter
     private Joueur joueur;
+    @Getter
+    @Setter
     private double prix;
 
     @Override
