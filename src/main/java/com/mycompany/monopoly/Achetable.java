@@ -1,5 +1,6 @@
 package com.mycompany.monopoly;
 
+
 import lombok.Getter;
 import lombok.Setter;
 

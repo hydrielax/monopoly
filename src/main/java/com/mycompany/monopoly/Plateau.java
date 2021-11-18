@@ -1,6 +1,7 @@
 package com.mycompany.monopoly;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,14 +9,11 @@ import lombok.Setter;
 
 @AllArgsConstructor
 public class Plateau {
-    @Getter
-    @Setter
+
     private ArrayList<Case> cases;
 
-    @Getter
-    @Setter
     private LinkedList<Joueur> joueurs;
-
+    
     public void initPlateau() { // TODO: Finish this method
         throw new UnsupportedOperationException();
     }
@@ -46,8 +44,24 @@ public class Plateau {
         return isEnded;
     }
 
-    public void tourDeJeu() { // TODO: Finish this method
-        throw new UnsupportedOperationException();
+    public void tourDeJeu() {
+        Iterator<Joueur> iter = joueurs.iterator();
+        while (iter.hasNext()) {
+            Joueur j = iter.next();
+            try {
+                j.tourDeJeu();
+            } catch (NoMoreMoneyException e) {
+                joueurs.remove(j);
+                Iterator<Case> iterCase = cases.iterator();
+                while (iterCase.hasNext()) {
+                    Case c = iterCase.next();
+                    if (c isInstanceOf Achetable) {
+                        Achetable a = (Achetable) c;
+                        
+                    }
+                }
+            }
+        }
     }
 
     public Case avance(Case c, int d) {
