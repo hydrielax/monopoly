@@ -1,19 +1,31 @@
 package com.mycompany.monopoly;
 
 import java.util.LinkedList;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 
-@AllArgsConstructor
+
+
 public class Plateau {
-    @Getter
-    @Setter
+    
     private LinkedList<Case> cases;
 
-    @Getter
-    @Setter
+    
     private LinkedList<Joueur> joueurs;
+
+    public LinkedList<Case> getCases() {
+        return cases;
+    }
+
+    public LinkedList<Joueur> getJoueurs() {
+        return joueurs;
+    }
+
+    public void setCases(LinkedList<Case> cases) {
+        this.cases = cases;
+    }
+
+    public void setJoueurs(LinkedList<Joueur> joueurs) {
+        this.joueurs = joueurs;
+    }
 
     public void initPlateau() { // TODO: Finish this method
         throw new UnsupportedOperationException();
