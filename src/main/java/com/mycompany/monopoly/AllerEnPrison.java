@@ -1,15 +1,10 @@
 package com.mycompany.monopoly;
 public class AllerEnPrison extends NonAchetable{
-    public AllerEnPrison(String nom) {
-        super(nom);
+    public AllerEnPrison() {
+        super("Aller en prison");
     }
     
     public void utiliser(Joueur j, int valeurDe){
         
-    }
-    @Override
-    public String toString(){
-        String res = "Vous êtes sur la case aller en prison";
-        return res;
     }
 }

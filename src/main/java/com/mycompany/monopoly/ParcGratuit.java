@@ -1,16 +1,11 @@
 package com.mycompany.monopoly;
 public class ParcGratuit extends NonAchetable{
 
-    public ParcGratuit(String nom) {
-        super(nom);
+    public ParcGratuit() {
+        super("Parc Gratuit");
     }
     
     public void utiliser(Joueur j, int valeurDe){
         
-    }
-    @Override
-    public String toString(){
-        String res = "Vous êtes sur la case parc gratuit";
-        return res;
     }
 }
