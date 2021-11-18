@@ -27,7 +27,7 @@ public class Plateau {
      * 
      * @param j Le joueur en question.
      */
-    public int nbgares(Joueur j) {
+    public int nbGares(Joueur j) {
         return (int) cases.stream().filter(c -> c instanceof Gare g && g.getJoueur().equals(j))
                 .count();
     }
@@ -39,7 +39,7 @@ public class Plateau {
         // If there is only one player in the game, then the game ends.
         var isEnded = joueurs.size() == 1;
         if (isEnded) {
-            System.out.println("Fin de partie, `" + joueurs.get(0) + "` a gagné !");
+            System.out.println("Fin de partie, `" + joueurs.get(0).getNom() + "` a gagné !");
         }
         return isEnded;
     }
@@ -64,8 +64,7 @@ public class Plateau {
         }
     }
 
-    public Case avance(Case c, int d) {
-        // TODO: Finish this method
-        throw new UnsupportedOperationException();
+    public int avance(int c, int d) {
+        return (c + d) % cases.size();
     }
 }
