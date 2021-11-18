@@ -23,9 +23,9 @@ public abstract class Achetable extends Case {
     @Override
     public String toString() {
         if (this.proprietaire != null) {
-            return this.getNom() + "(Coût : " + this.getPrix() + "€) - propriétaire:" + this.getProprietaire().getNom();
+            return this.getNom() + "(Coût : " + this.getPrix() + "€) - propriétaire : " + this.getProprietaire().getNom();
         } else {
-            return this.getNom() + " (coût :" + this.getPrix() + "€) - Sans proprietaire";
+            return this.getNom() + " (coût :" + this.getPrix() + "€) - Sans propriétaire";
         }
     }
 

@@ -85,7 +85,7 @@ public class Plateau {
     public void affiche() { // TODO: Finish this method
         System.out.println("Liste des joueurs : ");
         for (var j : joueurs) {
-            System.out.println(Integer.toString(cases.indexOf(j)) + " : " + j.toString());
+            System.out.println("- " + j.toString());
         }
         System.out.println("Liste des cases : ");
         for (var c : cases) {
