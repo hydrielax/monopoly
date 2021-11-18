@@ -55,9 +55,8 @@ public class Plateau {
                 Iterator<Case> iterCase = cases.iterator();
                 while (iterCase.hasNext()) {
                     Case c = iterCase.next();
-                    if (c isInstanceOf Achetable) {
-                        Achetable a = (Achetable) c;
-                        
+                    if (c instanceof Achetable a) {
+                         a.faillite(j);
                     }
                 }
             }
