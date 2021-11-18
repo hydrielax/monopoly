@@ -1,16 +1,13 @@
 package com.mycompany.monopoly;
 
-import com.mycompany.monopoly.exceptions.NoMoreMoneyException;
-
 public class Constructible extends Achetable {
     private int nbMaison;
     private int nbHotel;
     int prixMaison = 100;
     int prixHotel = 1000;
 
-    public Constructible() {
-        this.nbMaison = 0;
-        this.nbHotel = 0;
+    public Constructible(String nom, int prix) {
+        super(prix, nom);
     }
 
     public int loyer() {

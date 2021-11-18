@@ -11,7 +11,12 @@ package com.mycompany.monopoly;
  */
 public class Gare extends Achetable{
     private final int loyer;
-    
+
+    public Gare(String nom, int prix) {
+        super(prix, nom);
+        this.loyer = 2500;
+    }
+
     public Gare(Joueur j, int prix, String nom){
         super(j, prix, nom);
         this.loyer = 2500;

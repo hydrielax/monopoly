@@ -3,22 +3,17 @@ package com.mycompany.monopoly;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
-import com.mycompany.monopoly.exceptions.NoMoreMoneyException;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
 
 public class Plateau {
 
     /**
      * Liste des cases du plateau
      */
-    private ArrayList<Case> cases = new ArrayList<>();
+    private final ArrayList<Case> cases = new ArrayList<>();
     /**
      * Liste des joueurs
      */
-    private LinkedList<Joueur> joueurs = new LinkedList<>();
+    private final LinkedList<Joueur> joueurs = new LinkedList<>();
 
     /**
      * Créer les cases et les joueurs
@@ -95,7 +90,7 @@ public class Plateau {
      * @return nombre de gare pour le joueur
      */
     public int nbGares(Joueur j) {
-        return (int) cases.stream().filter(c -> c instanceof Gare g && g.getJoueur().equals(j)).count();
+        return (int) cases.stream().filter(c -> c instanceof Gare g && g.getProprietaire().equals(j)).count();
     }
 
     /**
@@ -143,5 +138,13 @@ public class Plateau {
      */
     public int avance(int c, int d) {
         return (c + d) % cases.size();
+    }
+
+    public ArrayList<Case> getCases() {
+        return cases;
+    }
+
+    public LinkedList<Joueur> getJoueurs() {
+        return joueurs;
     }
 }
