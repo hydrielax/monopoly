@@ -14,6 +14,7 @@ public class Plateau {
     /**
      * Liste des cases du plateau
      */
+    @Getter
     private ArrayList<Case> cases = new ArrayList<>();
     /**
      * Liste des joueurs
