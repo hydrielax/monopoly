@@ -3,28 +3,28 @@ package com.mycompany.monopoly;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
+import com.mycompany.monopoly.exceptions.NoMoreMoneyException;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 
 @AllArgsConstructor
 public class Plateau {
-    
+
     /**
      * Liste des cases du plateau
      */
-    private ArrayList<Case> cases;
+    private ArrayList<Case> cases = new ArrayList<>();
     /**
      * Liste des joueurs
      */
-    private LinkedList<Joueur> joueurs;
-    
+    private LinkedList<Joueur> joueurs = new LinkedList<>();
+
     /**
      * Créer les cases et les joueurs
      */
     public void initPlateau() { // TODO: Finish this method
         throw new UnsupportedOperationException();
     }
+
     /**
      * Afficher le plateau
      */
@@ -34,6 +34,7 @@ public class Plateau {
 
     /**
      * Donner le nombre des gares que possède un joueur.
+     * 
      * @param j Le joueur en question.
      * @return nombre de gare pour le joueur
      */
@@ -44,6 +45,7 @@ public class Plateau {
 
     /**
      * Indique si la partie est finie.
+     * 
      * @return vrai si la partie est finie
      */
     public boolean finDePartie() {
@@ -54,7 +56,7 @@ public class Plateau {
         }
         return isEnded;
     }
-    
+
     /**
      * Joue un tour de jeu
      */
@@ -70,15 +72,16 @@ public class Plateau {
                 while (iterCase.hasNext()) {
                     Case c = iterCase.next();
                     if (c instanceof Achetable a) {
-                         a.faillite(j);
+                        a.faillite(j);
                     }
                 }
             }
         }
     }
-    
+
     /**
      * Avance d'un nombre de cases donné en paramètre
+     * 
      * @param c Index de la case d'origine
      * @param d Nombre de cases à avancer
      * @return Index de la nouvelle case
