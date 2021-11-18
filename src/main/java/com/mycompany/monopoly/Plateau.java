@@ -34,7 +34,7 @@ public class Plateau {
         cases.add(new Gare("Reading Railroad", 200));
 
         cases.add(new Constructible("Oriental Avenue", 100));
-        cases.add(new NonAchetable("Chance", 0));
+        cases.add(new NonAchetable("Chance"));
         cases.add(new Constructible("Vermont Avenue", 100));
         cases.add(new Constructible("Connecticut Avenue", 120));
 
@@ -78,8 +78,6 @@ public class Plateau {
         cases.add(new Constructible("Park Place", 350));
         cases.add(new NonAchetable("Luxury Tax"));
         cases.add(new Constructible("Boardwalk", 400));
-
-        throw new UnsupportedOperationException();
 
     }
 
