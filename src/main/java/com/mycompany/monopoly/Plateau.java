@@ -95,7 +95,7 @@ public class Plateau {
      * @return nombre de gare pour le joueur
      */
     public int nbGares(Joueur j) {
-        return (int) cases.stream().filter(c -> c instanceof Gare g && g.getProprietaire().equals(j)).count();
+        return (int) cases.stream().filter(c -> c instanceof Gare g && g.getProprietaire() != null && g.getProprietaire().equals(j)).count();
     }
 
     /**

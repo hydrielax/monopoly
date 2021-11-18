@@ -32,6 +32,9 @@ public class MainMonopoly{
         String in = input.nextLine();
         while (!in.equals("Q")) {
             p.tourDeJeu();
+
+            System.out.println("===================");
+
             p.affiche();
 
             System.out.println("- Appuyez sur entrée pour continuer la partie");
