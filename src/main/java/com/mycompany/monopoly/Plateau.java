@@ -12,16 +12,18 @@ public class Plateau {
      * Liste des cases du plateau
      */
     @Getter
-    private final ArrayList<Case> cases = new ArrayList<>();
+    private ArrayList<Case> cases = new ArrayList<>();
     /**
      * Liste des joueurs
      */
-    private final LinkedList<Joueur> joueurs = new LinkedList<>();
+    private LinkedList<Joueur> joueurs = new LinkedList<>();
 
     /**
      * Créer les cases et les joueurs
      */
-    public void initPlateau() { // TODO: Finish this method
+    public void initPlateau(LinkedList<Joueur> joueurs) { // TODO: Finish this method
+        this.joueurs = joueurs;
+        
         cases.add(new Depart());
         cases.add(new Constructible("Mediter Ranean Avenue", 60));
         cases.add(new NonAchetable("Community Chest"));
