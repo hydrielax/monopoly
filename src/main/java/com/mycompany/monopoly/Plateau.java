@@ -24,7 +24,8 @@ public class Plateau {
     }
 
     public int nbgares(Joueur j) {
-        return (int) cases.stream().filter(c -> c instanceof Gare g && g.getJoueur() == j).count();
+        return (int) cases.stream().filter(c -> c instanceof Gare g && g.getJoueur().equals(j))
+                .count();
     }
 
     public boolean finDePartie() {
