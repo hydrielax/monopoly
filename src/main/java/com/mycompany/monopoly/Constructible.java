@@ -19,6 +19,11 @@ public class Constructible extends Achetable {
         return res;
     }
 
+    @Override
+    public void utiliser(Joueur j) {
+
+    }
+
     public int getNbMaison() {
         return nbMaison;
     }
